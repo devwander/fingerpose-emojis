@@ -19,7 +19,8 @@ const gestureStrings = {
   'rock': '✊️',
   'paper': '🖐',
   'scissors': '✌️',
-  'dont': '🙅‍♂️'
+  'dont': '🙅‍♂️',
+  'callMe': '🤙'
 }
 
 const base = ['Horizontal ', 'Diagonal Up']
@@ -51,14 +52,8 @@ async function main() {
     right: document.querySelector("#pose-result-right"),
     left: document.querySelector("#pose-result-left")
   }
-  // configure gesture estimator
-  // add "✌🏻" and "👍" as sample gestures
-  const knownGestures = [
-    fp.Gestures.VictoryGesture,
-    fp.Gestures.ThumbsUpGesture,
-    ...gestures
-  ]
-  const GE = new fp.GestureEstimator(knownGestures)
+ 
+  const GE = new fp.GestureEstimator(gestures)
   // load handpose model
   const detector = await createDetector()
   console.log("mediaPose model loaded")

@@ -4,6 +4,7 @@ const rockGesture = new GestureDescription('rock'); // ✊️
 const paperGesture = new GestureDescription('paper'); // 🖐
 const scissorsGesture = new GestureDescription('scissors'); // ✌️
 const dontGesture = new GestureDescription('dont') // 🙅‍♂️
+const callMeGesture = new GestureDescription('callMe') // 🤙
   
 // Rock
 // -----------------------------------------------------------------------------
@@ -57,8 +58,25 @@ for(const finger of Finger.all) {
     dontGesture.addDirection(finger, FingerDirection.HorizontalLeft, 1.0)
 }
 
+// Call me
+callMeGesture.addCurl(Finger.Thumb, FingerCurl.NoCurl, 1.0);
+dontGesture.addDirection(Finger.Thumb, FingerDirection.DiagonalUpLeft, 1.0)
+
+callMeGesture.addCurl(Finger.Index, FingerCurl.FullCurl, 1.0);
+dontGesture.addDirection(Finger.Index, FingerDirection.DiagonalUpLeft, 1.0)
+
+callMeGesture.addCurl(Finger.Middle, FingerCurl.FullCurl, 1.0);
+dontGesture.addDirection(Finger.Middle, FingerDirection.VerticalUp, 1.0)
+
+callMeGesture.addCurl(Finger.Ring, FingerCurl.FullCurl, 1.0);
+dontGesture.addDirection(Finger.Ring, FingerDirection.VerticalUp, 1.0)
+
+callMeGesture.addCurl(Finger.Pinky, FingerCurl.NoCurl, 1.0);
+dontGesture.addDirection(Finger.Pinky, FingerDirection.VerticalUp, 1.0)
+
+
 const gestures = [
-    rockGesture, paperGesture, scissorsGesture, dontGesture
+    rockGesture, paperGesture, scissorsGesture, dontGesture, callMeGesture
 ]
 
 export {
